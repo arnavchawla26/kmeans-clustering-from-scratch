@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kmeans-scratch"
+version = "0.1.0"
+description = "Dependency-free k-means++ / Lloyd's algorithm clustering, with elbow and silhouette methods for choosing k, synthetic blob datasets, and SVG/ASCII cluster-plot export."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Arnav Chawla" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+kmeans = "kmeans_scratch.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["kmeans_scratch*"]
